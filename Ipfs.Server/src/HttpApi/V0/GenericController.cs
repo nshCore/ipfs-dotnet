@@ -1,32 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Core.Lib;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     Some miscellaneous methods.
+    ///   Some miscellaneous methods.
     /// </summary>
     public class GenericController : IpfsController
     {
         /// <summary>
-        ///     Creates a new instance of the controller.
+        ///   Creates a new instance of the controller.
         /// </summary>
         public GenericController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     Information about the peer.
+        ///   Information about the peer.
         /// </summary>
         /// <param name="arg">
-        ///     The peer's ID or empty for the local peer.
+        ///   The peer's ID or empty for the local peer.
         /// </param>
-        [HttpGet] [HttpPost] [Route("id")]
+        [HttpGet, HttpPost, Route("id")]
         public async Task<PeerInfoDto> Get(string arg)
         {
             MultiHash id = null;
-            if (!string.IsNullOrEmpty(arg))
+            if (!String.IsNullOrEmpty(arg))
                 id = arg;
 
             var peer = await IpfsCore.Generic.IdAsync(id, Cancel);
@@ -34,22 +35,25 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Version information on the local peer.
+        ///   Version information on the local peer.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("version")]
-        public async Task<Dictionary<string, string>> Version() { return await IpfsCore.Generic.VersionAsync(Cancel); }
+        [HttpGet, HttpPost, Route("version")]
+        public async Task<Dictionary<string, string>> Version()
+        {
+            return await IpfsCore.Generic.VersionAsync(Cancel);
+        }
 
         /// <summary>
-        ///     Resolve a name.
+        ///   Resolve a name.
         /// </summary>
         /// <param name="arg">
-        ///     The name to resolve. Can be CID + [/path], "/ipfs/..." or
-        ///     "/ipns/...".
+        ///   The name to resolve. Can be CID + [/path], "/ipfs/..." or
+        ///   "/ipns/...".
         /// </param>
         /// <param name="recursive">
-        ///     Resolve until the result is an IPFS name. Defaults to <b>false</b>.
+        ///   Resolve until the result is an IPFS name. Defaults to <b>false</b>.
         /// </param>
-        [HttpGet] [HttpPost] [Route("resolve")]
+        [HttpGet(), HttpPost(), Route("resolve")]
         public async Task<PathDto> Resolve(string arg, bool recursive = false)
         {
             var path = await IpfsCore.Generic.ResolveAsync(arg, recursive, Cancel);
@@ -57,15 +61,16 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Stop the IPFS peer.
+        ///  Stop the IPFS peer.
         /// </summary>
         /// <returns></returns>
-        [HttpGet] [HttpPost] [Route("shutdown")]
+        [HttpGet, HttpPost, Route("shutdown")]
         public async Task Shutdown()
         {
             await IpfsCore.Generic.ShutdownAsync();
 
             Program.Shutdown();
         }
+
     }
 }

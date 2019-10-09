@@ -9,7 +9,7 @@ using Common.Logging;
 using LibP2P;
 using Newtonsoft.Json.Linq;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class PubSubApi : IPubSubApi

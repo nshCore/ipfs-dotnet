@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib;
-using Ipfs.Http.Client.CoreApi;
 using LibP2P;
 using Newtonsoft.Json;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Http.Client.CoreApi;
 
-namespace Ipfs.Http.Client
+namespace TheDotNetLeague.Ipfs.Http.Client
 {
     /// <summary>
     ///   A client that allows access to the InterPlanetary File System (IPFS).

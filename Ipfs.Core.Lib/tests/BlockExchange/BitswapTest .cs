@@ -1,12 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.BlockExchange;
 using LibP2P;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib.BlockExchange;
 
-namespace Ipfs.Engine.BlockExchange
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.BlockExchange
 {
     [TestClass]
     public class BitswapTest

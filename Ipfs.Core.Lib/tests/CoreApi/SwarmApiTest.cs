@@ -3,13 +3,12 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using LibP2P.Cryptography;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Engine.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.CoreApi
 {
 
     [TestClass]

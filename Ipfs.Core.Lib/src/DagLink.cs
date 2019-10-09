@@ -2,9 +2,9 @@
 using System.IO;
 using Google.Protobuf;
 using LibP2P;
-using IMerkleLink = Ipfs.Abstractions.IMerkleLink;
+using IMerkleLink = TheDotNetLeague.Ipfs.Abstractions.IMerkleLink;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     A link to another node in the IPFS Merkle DAG.

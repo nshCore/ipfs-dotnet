@@ -2,65 +2,65 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using LibP2P;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     A list of topics.
+    ///   A list of topics.
     /// </summary>
     public class PubsubTopicsDto
     {
         /// <summary>
-        ///     A list of topics.
+        ///   A list of topics.
         /// </summary>
         public IEnumerable<string> Strings;
     }
 
     /// <summary>
-    ///     A list of peers.
+    ///   A list of peers.
     /// </summary>
     public class PubsubPeersDto
     {
         /// <summary>
-        ///     A list of peer IDs.
+        ///   A list of peer IDs.
         /// </summary>
         public IEnumerable<string> Strings;
     }
 
     /// <summary>
-    ///     A published message.
+    ///   A published message.
     /// </summary>
     public class MessageDto
     {
         /// <summary>
-        ///     The base-64 encoding of the message data.
-        /// </summary>
-        public string data;
-
-        /// <summary>
-        ///     The base-64 encoding of the author's peer id.
+        ///   The base-64 encoding of the author's peer id.
         /// </summary>
         public string from;
 
         /// <summary>
-        ///     The base-64 encoding of the author's unique sequence number.
+        ///   The base-64 encoding of the author's unique sequence number.
         /// </summary>
         public string seqno;
 
         /// <summary>
-        ///     The topics associated with the message.
+        ///   The base-64 encoding of the message data.
+        /// </summary>
+        public string data;
+
+        /// <summary>
+        ///   The topics associated with the message.
         /// </summary>
         public string[] topicIDs;
 
         /// <summary>
-        ///     Create a new instance of the <see cref="MessageDto" />
-        ///     from the <see cref="IPublishedMessage" />.
+        ///   Create a new instance of the <see cref="MessageDto"/>
+        ///   from the <see cref="IPublishedMessage"/>.
         /// </summary>
         /// <param name="msg">
-        ///     A pubsub messagee.
+        ///   A pubsub messagee.
         /// </param>
         public MessageDto(IPublishedMessage msg)
         {
@@ -72,19 +72,19 @@ namespace Ipfs.Server.HttpApi.V0
     }
 
     /// <summary>
-    ///     Publishing and subscribing to messages on a topic.
+    ///   Publishing and subscribing to messages on a topic.
     /// </summary>
     public class PubSubController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Creates a new controller.
         /// </summary>
         public PubSubController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     List all the subscribed topics.
+        ///   List all the subscribed topics.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("pubsub/ls")]
+        [HttpGet, HttpPost, Route("pubsub/ls")]
         public async Task<PubsubTopicsDto> List()
         {
             return new PubsubTopicsDto
@@ -94,44 +94,43 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     List all the peers associated with the topic.
+        ///   List all the peers associated with the topic.
         /// </summary>
         /// <param name="arg">
-        ///     The topic name or null/empty for "all topics".
+        ///   The topic name or null/empty for "all topics".
         /// </param>
-        [HttpGet] [HttpPost] [Route("pubsub/peers")]
+        [HttpGet, HttpPost, Route("pubsub/peers")]
         public async Task<PubsubPeersDto> Peers(string arg)
         {
-            var topic = string.IsNullOrEmpty(arg) ? null : arg;
+            string topic = String.IsNullOrEmpty(arg) ? null : arg;
             var peers = await IpfsCore.PubSub.PeersAsync(topic, Cancel);
             return new PubsubPeersDto
             {
                 Strings = peers.Select(p => p.Id.ToString())
             };
         }
-
         /// <summary>
-        ///     Publish a message to a topic.
+        ///   Publish a message to a topic.
         /// </summary>
         /// <param name="arg">
-        ///     The first arg is the topic name and second is the message.
+        ///   The first arg is the topic name and second is the message.
         /// </param>
-        [HttpGet] [HttpPost] [Route("pubsub/pub")]
+        [HttpGet, HttpPost, Route("pubsub/pub")]
         public async Task Publish(string[] arg)
         {
             if (arg.Length != 2)
                 throw new ArgumentException("Missing topic and/or message.");
-            var message = arg[1].Select(c => (byte) c).ToArray();
+            var message = arg[1].Select(c => (byte)c).ToArray();
             await IpfsCore.PubSub.PublishAsync(arg[0], message, Cancel);
         }
 
         /// <summary>
-        ///     Subscribe to messages on the topic.
+        ///   Subscribe to messages on the topic.
         /// </summary>
         /// <param name="arg">
-        ///     The topic name.
+        ///   The topic name.
         /// </param>
-        [HttpGet] [HttpPost] [Route("pubsub/sub")]
+        [HttpGet, HttpPost, Route("pubsub/sub")]
         public async Task Subscribe(string arg)
         {
             await IpfsCore.PubSub.SubscribeAsync(arg, message =>

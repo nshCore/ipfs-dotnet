@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.CoreApi;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Manages all the blocks stored locally.

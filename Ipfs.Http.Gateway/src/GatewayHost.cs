@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.GateWay
+namespace TheDotNetLeague.Ipfs.Http.Gateway
 {
     /// <summary>
     ///     Acts as a bridge between traditional web browsers and IPFS. Through the gateway,

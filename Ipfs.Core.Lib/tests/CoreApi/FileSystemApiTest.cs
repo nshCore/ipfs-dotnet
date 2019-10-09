@@ -6,14 +6,14 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using ICSharpCode.SharpZipLib.Tar;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib.CoreApi;
-using Ipfs.Core.Lib.UnixFileSystem;
 using LibP2P;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
+using TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Engine.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.CoreApi
 {
     [TestClass]
     public class FileSystemApiTest

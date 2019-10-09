@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProtoBuf;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     [ProtoContract]
     class M1

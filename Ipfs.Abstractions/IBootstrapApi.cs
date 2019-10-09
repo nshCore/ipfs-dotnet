@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Manages the list of initial peers.

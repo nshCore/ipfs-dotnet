@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib.BlockExchange
+namespace TheDotNetLeague.Ipfs.Core.Lib.BlockExchange
 {
     /// <summary>
     ///     A content addressable block that is wanted by a peer.

@@ -8,7 +8,7 @@ using LibP2P;
 using Newtonsoft.Json.Linq;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class DhtApi : IDhtApi

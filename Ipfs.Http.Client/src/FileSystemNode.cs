@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
-using Ipfs.Abstractions;
 using LibP2P;
+using TheDotNetLeague.Ipfs.Abstractions;
 
-namespace Ipfs.Http.Client
+namespace TheDotNetLeague.Ipfs.Http.Client
 {
     /// <inheritdoc />
     [DataContract]

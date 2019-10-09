@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     /// <summary>
     ///   Asserting an <see cref="Exception"/>.

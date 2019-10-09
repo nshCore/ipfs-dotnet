@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using LibP2P;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ipfs.Engine.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.CoreApi
 {
     [TestClass]
     public class GenericApiTest

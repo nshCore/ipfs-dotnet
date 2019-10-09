@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Abstractions;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class ConfigApi : IConfigApi

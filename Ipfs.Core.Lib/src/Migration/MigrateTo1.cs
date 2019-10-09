@@ -6,7 +6,7 @@ using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib.Migration
+namespace TheDotNetLeague.Ipfs.Core.Lib.Migration
 {
     internal class MigrateTo1 : IMigration
     {

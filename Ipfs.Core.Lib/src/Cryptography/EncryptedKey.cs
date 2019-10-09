@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Core.Lib.Cryptography
+﻿namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     /// <summary>
     ///     A private key that is password protected.

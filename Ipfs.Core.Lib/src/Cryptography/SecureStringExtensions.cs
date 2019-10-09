@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace Ipfs.Core.Lib.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     /// <summary>
     ///     Extensions for a <see cref="SecureString" />.

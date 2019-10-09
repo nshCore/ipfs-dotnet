@@ -1,10 +1,9 @@
 ﻿using System.IO;
+using Common.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
-using Common.Logging;
-using Ipfs.Core.Lib;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     [TestClass]
     public class TestFixture

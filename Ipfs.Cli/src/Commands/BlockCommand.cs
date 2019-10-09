@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Manage raw blocks")]
     [Subcommand("stat", typeof(BlockStatCommand))]

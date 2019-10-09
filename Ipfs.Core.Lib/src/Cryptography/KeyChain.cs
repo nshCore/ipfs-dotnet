@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
-using Ipfs.Core.Lib.Cryptography.Proto;
 using Org.BouncyCastle.Asn1.Sec;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Digests;
@@ -18,11 +17,12 @@ using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
 using ProtoBuf;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography.Proto;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
-using IKey = Ipfs.Abstractions.IKey;
+using IKey = TheDotNetLeague.Ipfs.Abstractions.IKey;
 
-namespace Ipfs.Core.Lib.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     /// <summary>
     ///     A secure key chain.

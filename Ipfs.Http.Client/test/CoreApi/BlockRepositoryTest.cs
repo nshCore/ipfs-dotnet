@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ipfs.Http.Client.Tests.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests.CoreApi
 {
  
     [TestClass]

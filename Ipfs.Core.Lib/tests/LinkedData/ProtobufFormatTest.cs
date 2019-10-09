@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Text;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.LinkedData;
+﻿using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib.LinkedData;
 
-namespace Ipfs.Engine.LinkedData
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.LinkedData
 {
     [TestClass]
     public class ProtobufFormatTest

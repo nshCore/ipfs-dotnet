@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "List links")]
     internal class LsCommand : CommandBase

@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Core.Lib
+﻿namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Configuration options for a <see cref="Ipfs.Abstractions.IBlockApi">block service</see>.

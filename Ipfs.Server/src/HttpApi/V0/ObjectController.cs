@@ -3,121 +3,123 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib;
 using LibP2P;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     Stats for an object.
+    ///   Stats for an object.
     /// </summary>
     public class ObjectStatDto
     {
         /// <summary>
-        ///     The CID of the object.
+        ///   The CID of the object.
         /// </summary>
         public string Hash;
 
         /// <summary>
-        ///     Number of links.
+        ///   Number of links.
         /// </summary>
         public int NumLinks { get; set; }
 
         /// <summary>
-        ///     Size of the links segment.
+        ///   Size of the links segment.
         /// </summary>
         public long LinksSize { get; set; }
 
         /// <summary>
-        ///     Size of the raw, encoded data.
+        ///   Size of the raw, encoded data.
         /// </summary>
         public long BlockSize { get; set; }
 
         /// <summary>
-        ///     Siz of the data segment.
+        ///   Siz of the data segment.
         /// </summary>
         public long DataSize { get; set; }
 
         /// <summary>
-        ///     Size of object and its references
+        ///   Size of object and its references
         /// </summary>
         public long CumulativeSize { get; set; }
     }
 
     /// <summary>
-    ///     A link to a file.
+    ///  A link to a file.
     /// </summary>
     public class ObjectLinkDto
     {
         /// <summary>
-        ///     The CID of the object.
-        /// </summary>
-        public string Hash;
-
-        /// <summary>
-        ///     The object name.
+        ///   The object name.
         /// </summary>
         public string Name;
 
         /// <summary>
-        ///     The object size.
+        ///   The CID of the object.
+        /// </summary>
+        public string Hash;
+
+        /// <summary>
+        ///   The object size.
         /// </summary>
         public long Size;
     }
 
     /// <summary>
-    ///     Link details on an object.
+    ///   Link details on an object.
     /// </summary>
     public class ObjectLinkDetailDto
     {
         /// <summary>
-        ///     The CID of the object.
+        ///   The CID of the object.
         /// </summary>
         public string Hash;
 
         /// <summary>
-        ///     Links to other objects.
+        ///   Links to other objects.
         /// </summary>
         public IEnumerable<ObjectLinkDto> Links;
     }
 
     /// <summary>
-    ///     Data and link details on an object.
+    ///   Data and link details on an object.
     /// </summary>
     public class ObjectDataDetailDto : ObjectLinkDetailDto
     {
         /// <summary>
-        ///     The object data encoded as UTF-8.
+        ///   The object data encoded as UTF-8.
         /// </summary>
         public string Data;
     }
 
     /// <summary>
-    ///     Manages the IPFS Merkle Directed Acrylic Graph.
+    ///   Manages the IPFS Merkle Directed Acrylic Graph.
     /// </summary>
     /// <remarks>
-    ///     <note>
-    ///         This is being obsoleted by <see cref="IDagApi" />.
-    ///     </note>
+    ///   <note>
+    ///   This is being obsoleted by <see cref="IDagApi"/>.
+    ///   </note>
     /// </remarks>
     public class ObjectController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Creates a new controller.
         /// </summary>
         public ObjectController(ICoreApi ipfs) : base(ipfs) { }
 
+
         /// <summary>
-        ///     Create an object from a template.
+        ///   Create an object from a template.
         /// </summary>
         /// <param name="arg">
-        ///     Template name. Must be "unixfs-dir".
+        ///   Template name. Must be "unixfs-dir".
         /// </param>
-        [HttpGet] [HttpPost] [Route("object/new")]
-        public async Task<ObjectLinkDetailDto> Create(string arg)
+        [HttpGet, HttpPost, Route("object/new")]
+        public async Task<ObjectLinkDetailDto> Create(
+            string arg)
         {
             var node = await IpfsCore.Object.NewAsync(arg, Cancel);
             Immutable();
@@ -134,28 +136,30 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Store a MerkleDAG node.
+        ///   Store a MerkleDAG node.
         /// </summary>
         /// <param name="file">
-        ///     multipart/form-data.
+        ///   multipart/form-data.
         /// </param>
         /// <param name="inputenc">
-        ///     "protobuf" or "json"
+        ///   "protobuf" or "json"
         /// </param>
         /// <param name="datafieldenc">
-        ///     "text" or "base64"
+        ///   "text" or "base64"
         /// </param>
         /// <param name="pin">
-        ///     Pin the object.
+        ///   Pin the object.
         /// </param>
         /// <returns></returns>
         [HttpPost("object/put")]
-        public async Task<ObjectLinkDetailDto> Put(IFormFile file,
+        public async Task<ObjectLinkDetailDto> Put(
+            IFormFile file,
             string inputenc = "json",
             string datafieldenc = "text",
-            bool pin = false)
+            bool pin = false
+        )
         {
-            if (datafieldenc != "text") // TODO
+            if (datafieldenc != "text")  // TODO
                 throw new NotImplementedException("Only datafieldenc = `text` is allowed.");
 
             DagNode node = null;
@@ -167,7 +171,6 @@ namespace Ipfs.Server.HttpApi.V0
                         var dag = new DagNode(stream);
                         node = await IpfsCore.Object.PutAsync(dag, Cancel);
                     }
-
                     break;
 
                 case "json": // TODO
@@ -175,7 +178,10 @@ namespace Ipfs.Server.HttpApi.V0
                     throw new ArgumentException("inputenc", $"Input encoding '{inputenc}' is not supported.");
             }
 
-            if (pin) await IpfsCore.Pin.AddAsync(node.Id, false, Cancel);
+            if (pin)
+            {
+                await IpfsCore.Pin.AddAsync(node.Id, false, Cancel);
+            }
 
             return new ObjectLinkDetailDto
             {
@@ -190,16 +196,17 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Get the data and links of an object.
+        ///   Get the data and links of an object.
         /// </summary>
         /// <param name="arg">
-        ///     The object's CID.
+        ///   The object's CID.
         /// </param>
         /// <param name="dataEncoding">
-        ///     The encoding of the object's data; "text" (default) or "base64".
+        ///   The encoding of the object's data; "text" (default) or "base64".
         /// </param>
-        [HttpGet] [HttpPost] [Route("object/get")]
-        public async Task<ObjectDataDetailDto> Get(string arg,
+        [HttpGet, HttpPost, Route("object/get")]
+        public async Task<ObjectDataDetailDto> Get(
+            string arg,
             [ModelBinder(Name = "data-encoding")] string dataEncoding)
         {
             var node = await IpfsCore.Object.GetAsync(arg, Cancel);
@@ -224,18 +231,18 @@ namespace Ipfs.Server.HttpApi.V0
                     dto.Data = Encoding.UTF8.GetString(node.DataBytes);
                     break;
             }
-
             return dto;
         }
 
         /// <summary>
-        ///     Get the links of an object.
+        ///   Get the links of an object.
         /// </summary>
         /// <param name="arg">
-        ///     The object's CID.
+        ///   The object's CID.
         /// </param>
-        [HttpGet] [HttpPost] [Route("object/links")]
-        public async Task<ObjectLinkDetailDto> Links(string arg)
+        [HttpGet, HttpPost, Route("object/links")]
+        public async Task<ObjectLinkDetailDto> Links(
+            string arg)
         {
             var links = await IpfsCore.Object.LinksAsync(arg, Cancel);
             Immutable();
@@ -252,30 +259,31 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Get the object's data.
+        ///   Get the object's data.
         /// </summary>
         /// <param name="arg">
-        ///     The object's CID or a path.
+        ///   The object's CID or a path.
         /// </param>
-        [HttpGet] [HttpPost] [Route("object/data")]
+        [HttpGet, HttpPost, Route("object/data")]
         [Produces("text/plain")]
         public async Task<IActionResult> Data(string arg)
         {
             var r = await IpfsCore.Generic.ResolveAsync(arg, true, Cancel);
-            var cid = Cid.Decode(r.Remove(0, 6)); // strip '/ipfs/'.
+            var cid = Cid.Decode(r.Remove(0, 6));  // strip '/ipfs/'.
             var stream = await IpfsCore.Object.DataAsync(cid, Cancel);
 
             return File(stream, "text/plain");
         }
 
         /// <summary>
-        ///     Get the stats of an object.
+        ///   Get the stats of an object.
         /// </summary>
         /// <param name="arg">
-        ///     The object's CID.
+        ///   The object's CID.
         /// </param>
-        [HttpGet] [HttpPost] [Route("object/stat")]
-        public async Task<ObjectStatDto> Stat(string arg)
+        [HttpGet, HttpPost, Route("object/stat")]
+        public async Task<ObjectStatDto> Stat(
+            string arg)
         {
             var info = await IpfsCore.Object.StatAsync(arg, Cancel);
             Immutable();
@@ -289,5 +297,6 @@ namespace Ipfs.Server.HttpApi.V0
                 NumLinks = info.LinkCount
             };
         }
+
     }
 }

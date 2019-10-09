@@ -2,12 +2,12 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.Cryptography;
 using LibP2P;
 using ProtoBuf;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
 
-namespace Ipfs.Core.Lib.UnixFileSystem
+namespace TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem
 {
     /// <summary>
     ///     Support for the *nix file system.

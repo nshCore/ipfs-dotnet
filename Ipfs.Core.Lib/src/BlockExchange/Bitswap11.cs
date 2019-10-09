@@ -14,7 +14,7 @@ using TheDotNetLeague.MultiFormats.MultiHash;
 #pragma warning disable 0649 // disable warning about unassinged fields
 #pragma warning disable 0169// disable warning about unassinged fields
 
-namespace Ipfs.Core.Lib.BlockExchange
+namespace TheDotNetLeague.Ipfs.Core.Lib.BlockExchange
 {
     /// <summary>
     ///     Bitswap Protocol version 1.1.0

@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Manages the IPFS Configuration.

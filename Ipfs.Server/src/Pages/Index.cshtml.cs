@@ -1,29 +1,32 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.Pages
+namespace TheDotNetLeague.Ipfs.Server.Pages
 {
     /// <summary>
-    ///     Not used.
+    ///   Not used.
     /// </summary>
     public class IndexModel : PageModel
     {
-        private readonly ICoreApi ipfs;
+        ICoreApi ipfs;
 
         /// <summary>
-        ///     The local node's globally unique identifier.
+        ///   Creates a new instance of the controller.
+        /// </summary>
+        public IndexModel(ICoreApi ipfs)
+        {
+            this.ipfs = ipfs;
+        }
+
+        /// <summary>
+        ///   The local node's globally unique identifier.
         /// </summary>
         public string NodeId = "foo-bar";
 
         /// <summary>
-        ///     Creates a new instance of the controller.
-        /// </summary>
-        public IndexModel(ICoreApi ipfs) { this.ipfs = ipfs; }
-
-        /// <summary>
-        ///     Build the model.
+        ///   Build the model.
         /// </summary>
         public async Task OnGetAsync(CancellationToken cancel)
         {

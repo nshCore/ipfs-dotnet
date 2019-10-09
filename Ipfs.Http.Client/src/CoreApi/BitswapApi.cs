@@ -2,13 +2,13 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib.CoreApi;
 using LibP2P;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class BitswapApi : IBitswapApi

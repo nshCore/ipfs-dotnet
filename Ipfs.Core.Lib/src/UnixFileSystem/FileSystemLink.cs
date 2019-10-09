@@ -1,6 +1,6 @@
 ﻿using LibP2P;
 
-namespace Ipfs.Core.Lib.UnixFileSystem
+namespace TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem
 {
     /// <summary>
     ///     A link to another <see cref="FileSystemNode" /> in the IPFS Unix File System.

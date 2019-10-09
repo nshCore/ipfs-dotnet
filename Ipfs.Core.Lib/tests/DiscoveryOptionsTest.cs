@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Ipfs.Core.Lib;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     
     [TestClass]

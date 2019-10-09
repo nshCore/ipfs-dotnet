@@ -1,7 +1,7 @@
 ﻿using LibP2P;
 using LibP2P.Cryptography;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Configuration options for communication with other peers.

@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Core.Lib.Cryptography
+﻿namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     /// <summary>
     ///     Configuration options for the <see cref="KeyChain" />.

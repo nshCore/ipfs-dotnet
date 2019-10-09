@@ -2,11 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib.CoreApi;
 using McMaster.Extensions.CommandLineUtils;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Add a file to IPFS")]
     internal class AddCommand : CommandBase

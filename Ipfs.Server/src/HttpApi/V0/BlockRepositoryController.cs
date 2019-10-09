@@ -1,53 +1,62 @@
 ﻿using System.Threading.Tasks;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.CoreApi;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     A wrapped version number.
+    ///   A wrapped version number.
     /// </summary>
     public class VersionBlockRepositoryDto
     {
         /// <summary>
-        ///     The version number.
+        ///   The version number.
         /// </summary>
         public string Version;
     }
 
     /// <summary>
-    ///     Manages all the blocks in teh repository.
+    ///    Manages all the blocks in teh repository.
     /// </summary>
     public class BlockRepositoryController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Creates a new controller.
         /// </summary>
         public BlockRepositoryController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     Garbage collection.
+        ///   Garbage collection.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("repo/gc")]
-        public Task GarbageCollection() { return IpfsCore.BlockRepository.RemoveGarbageAsync(Cancel); }
+        [HttpGet, HttpPost, Route("repo/gc")]
+        public Task GarbageCollection()
+        {
+            return IpfsCore.BlockRepository.RemoveGarbageAsync(Cancel);
+        }
 
         /// <summary>
-        ///     Get repository information.
+        ///   Get repository information.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("repo/stat")]
-        public Task<RepositoryData> Statistics() { return IpfsCore.BlockRepository.StatisticsAsync(Cancel); }
+        [HttpGet, HttpPost, Route("repo/stat")]
+        public Task<RepositoryData> Statistics()
+        {
+            return IpfsCore.BlockRepository.StatisticsAsync(Cancel);
+        }
 
         /// <summary>
-        ///     Verify that the blocks are not corrupt.
+        ///   Verify that the blocks are not corrupt.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("repo/verify")]
-        public Task Verify() { return IpfsCore.BlockRepository.VerifyAsync(Cancel); }
+        [HttpGet, HttpPost, Route("repo/verify")]
+        public Task Verify()
+        {
+            return IpfsCore.BlockRepository.VerifyAsync(Cancel);
+        }
 
         /// <summary>
-        ///     Get repository information.
+        ///   Get repository information.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("repo/version")]
+        [HttpGet, HttpPost, Route("repo/version")]
         public async Task<VersionBlockRepositoryDto> Version()
         {
             return new VersionBlockRepositoryDto

@@ -1,6 +1,6 @@
 ﻿using LibP2P;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     /// <summary>
     ///     Statistics on the <see cref="Ipfs.Abstractions.IBitswapApi">bitswap</see> blocks exchanged with another

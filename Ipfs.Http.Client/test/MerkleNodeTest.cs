@@ -4,7 +4,7 @@ using System.Linq;
 using LibP2P;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ipfs.Http.Client.Tests
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests
 {
     
     [TestClass]

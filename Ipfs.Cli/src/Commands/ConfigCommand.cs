@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 using Newtonsoft.Json.Linq;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Manage the configuration")]
     [Subcommand("show", typeof(ConfigShowCommand))]

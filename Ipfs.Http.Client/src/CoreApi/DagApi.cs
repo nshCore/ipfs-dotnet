@@ -3,14 +3,14 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
 using LibP2P;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Abstractions;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class DagApi : IDagApi

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Manage connections to the p2p network")]
     [Subcommand("connect", typeof(SwarmConnectCommand))]

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using McMaster.Extensions.CommandLineUtils;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Manage the IPFS repository")]
     [Subcommand("gc", typeof(RepoGCCommand))]

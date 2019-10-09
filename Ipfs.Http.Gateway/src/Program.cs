@@ -1,7 +1,7 @@
 ﻿using System.Threading;
-using Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.GateWay
+namespace TheDotNetLeague.Ipfs.Http.Gateway
 {
     /// <summary>
     ///     Runs the gateway as a separate process.

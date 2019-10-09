@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using LibP2P;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class PubSubApi : IPubSubApi
     {

@@ -9,7 +9,7 @@ using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     [DataContract]
     internal class DataBlock : IDataBlock

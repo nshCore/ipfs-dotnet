@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using LibP2P;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Manage pinned objects (locally stored and permanent).

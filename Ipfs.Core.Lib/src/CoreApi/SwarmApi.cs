@@ -7,7 +7,7 @@ using LibP2P;
 using Newtonsoft.Json.Linq;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class SwarmApi : ISwarmApi
     {

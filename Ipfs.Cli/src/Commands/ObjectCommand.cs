@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.UnixFileSystem;
 using McMaster.Extensions.CommandLineUtils;
 using ProtoBuf;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Manage IPFS objects")]
     [Subcommand("links", typeof(ObjectLinksCommand))]

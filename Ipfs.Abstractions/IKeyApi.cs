@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Manages cryptographic keys.

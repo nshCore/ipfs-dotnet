@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Configuration options for discovering other peers.

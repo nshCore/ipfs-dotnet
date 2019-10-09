@@ -1,16 +1,15 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Linq;
 using System.Security;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.Cryptography;
 using LibP2P;
 using LibP2P.Cryptography;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     
     [TestClass]

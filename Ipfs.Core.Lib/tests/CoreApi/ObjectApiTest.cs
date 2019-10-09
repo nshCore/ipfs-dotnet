@@ -1,12 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ipfs.Engine.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.CoreApi
 {
 
     [TestClass]

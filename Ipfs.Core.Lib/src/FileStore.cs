@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Nito.AsyncEx;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     A file based repository for name value pairs.

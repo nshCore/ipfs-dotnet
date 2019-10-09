@@ -5,7 +5,7 @@ using Common.Logging;
 using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Periodically queries the DHT to discover new peers.

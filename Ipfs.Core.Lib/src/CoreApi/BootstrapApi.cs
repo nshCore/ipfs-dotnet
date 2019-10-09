@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class BootstrapApi : Abstractions.IBootstrapApi
     {

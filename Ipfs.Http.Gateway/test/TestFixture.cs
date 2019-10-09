@@ -1,11 +1,10 @@
 ﻿using System.IO;
+using Common.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
-using Common.Logging;
-using Ipfs.Core.Lib;
-using Ipfs.GateWay;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.HttpGateway
+namespace TheDotNetLeague.Ipfs.Http.Gateway.Tests
 {
     [TestClass]
     public class TestFixture

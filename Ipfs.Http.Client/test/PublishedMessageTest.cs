@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheDotNetLeague.MultiFormats.MultiBase;
 
-namespace Ipfs.Http.Client.Tests
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests
 {
     
     [TestClass]

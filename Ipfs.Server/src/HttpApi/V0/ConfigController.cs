@@ -1,43 +1,65 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
+
     /// <summary>
-    ///     Manages the IPFS Configuration.
+    ///   Manages the IPFS Configuration.
     /// </summary>
     public class ConfigController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Details on a configuration setting.
+        /// </summary>
+        public class ConfigDetailDto
+        {
+            /// <summary>
+            ///   The name of the configuration setting.
+            /// </summary>
+            public string Key;
+
+            /// <summary>
+            ///   The value of the configuration setting.
+            /// </summary>
+            public JToken Value;
+        }
+
+        /// <summary>
+        ///   Creates a new controller.
         /// </summary>
         public ConfigController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     Get all the configuration settings.
+        ///  Get all the configuration settings.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("config/show")]
-        public Task<JObject> GetAllKeys() { return IpfsCore.Config.GetAsync(Cancel); }
+        [HttpGet, HttpPost, Route("config/show")]
+        public Task<JObject> GetAllKeys()
+        {
+            return IpfsCore.Config.GetAsync(Cancel);
+        }
 
         /// <summary>
-        ///     Gets or sets the configuration setting.
+        ///   Gets or sets the configuration setting.
         /// </summary>
         /// <param name="arg">
-        ///     The configuration setting key and possibly its value.
+        ///   The configuration setting key and possibly its value.
         /// </param>
         /// <param name="json">
-        ///     Indicates that the value is JSON.
+        ///   Indicates that the value is JSON.
         /// </param>
         /// <returns></returns>
-        [HttpGet] [HttpPost] [Route("config")]
-        public async Task<ConfigDetailDto> Key(string[] arg,
-            bool json = false)
+        [HttpGet, HttpPost, Route("config")]
+        public async Task<ConfigDetailDto> Key(
+            string[] arg,
+            bool json = false
+            )
         {
             if (arg.Length == 1)
             {
@@ -48,8 +70,7 @@ namespace Ipfs.Server.HttpApi.V0
                     Value = value
                 };
             }
-
-            if (arg.Length == 2)
+            else if (arg.Length == 2)
             {
                 if (json)
                 {
@@ -70,17 +91,19 @@ namespace Ipfs.Server.HttpApi.V0
                     Value = arg[1]
                 };
             }
-
-            throw new FormatException("Too many arg values.");
+            else
+            {
+                throw new FormatException("Too many arg values.");
+            }
         }
 
         /// <summary>
-        ///     Replace all the configuration settings.
+        ///  Replace all the configuration settings.
         /// </summary>
         /// <param name="file">
-        ///     The new configuration settings.
+        ///   The new configuration settings.
         /// </param>
-        [HttpGet] [HttpPost] [Route("config/replace")]
+        [HttpGet, HttpPost, Route("config/replace")]
         public async Task Replace(IFormFile file)
         {
             if (file == null)
@@ -93,22 +116,6 @@ namespace Ipfs.Server.HttpApi.V0
                 var json = await JObject.LoadAsync(reader);
                 await IpfsCore.Config.ReplaceAsync(json);
             }
-        }
-
-        /// <summary>
-        ///     Details on a configuration setting.
-        /// </summary>
-        public class ConfigDetailDto
-        {
-            /// <summary>
-            ///     The name of the configuration setting.
-            /// </summary>
-            public string Key;
-
-            /// <summary>
-            ///     The value of the configuration setting.
-            /// </summary>
-            public JToken Value;
         }
     }
 }

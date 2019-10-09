@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Data trading module for IPFS. Its purpose is to request blocks from and

@@ -1,10 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Engine.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.CoreApi
 {
 
     [TestClass]

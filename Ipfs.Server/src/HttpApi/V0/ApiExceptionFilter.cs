@@ -1,36 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     Handles exceptions thrown by a controller.
+    ///   Handles exceptions thrown by a controller.
     /// </summary>
     /// <remarks>
-    ///     Returns a <see cref="ApiError" /> to the caller.
+    ///   Returns a <see cref="ApiError"/> to the caller.
     /// </remarks>
     public class ApiExceptionFilter : ExceptionFilterAttribute
     {
         /// <inheritdoc />
         public override void OnException(ExceptionContext context)
         {
-            var statusCode = 500; // Internal Server Error
-            var message = context.Exception.Message;
+            int statusCode = 500; // Internal Server Error
+            string message = context.Exception.Message;
             string[] details = null;
 
             // Map special exceptions to a status code.
             if (context.Exception is FormatException)
-            {
                 statusCode = 400; // Bad Request
-            }
             else if (context.Exception is KeyNotFoundException)
-            {
                 statusCode = 400; // Bad Request
-            }
             else if (context.Exception is TaskCanceledException)
             {
                 statusCode = 504; // Gateway Timeout
@@ -40,17 +35,19 @@ namespace Ipfs.Server.HttpApi.V0
             {
                 statusCode = 501; // Not Implemented
             }
-            else if (context.Exception is TargetInvocationException)
+            else if (context.Exception is System.Reflection.TargetInvocationException)
             {
                 message = context.Exception.InnerException.Message;
             }
 
             // Internal Server Error or Not Implemented get a stack dump.
             if (statusCode == 500 || statusCode == 501)
+            {
                 details = context.Exception.StackTrace.Split(Environment.NewLine);
+            }
 
             context.HttpContext.Response.StatusCode = statusCode;
-            context.Result = new JsonResult(new ApiError {Message = message, Details = details});
+            context.Result = new JsonResult(new ApiError { Message = message, Details = details });
 
             // Remove any caching headers
             context.HttpContext.Response.Headers.Remove("cache-control");
@@ -60,4 +57,5 @@ namespace Ipfs.Server.HttpApi.V0
             base.OnException(context);
         }
     }
+
 }

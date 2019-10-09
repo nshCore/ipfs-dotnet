@@ -1,15 +1,15 @@
 ﻿using LibP2P;
-using IBitswapApi = Ipfs.Abstractions.IBitswapApi;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
-using IBootstrapApi = Ipfs.Abstractions.IBootstrapApi;
-using IConfigApi = Ipfs.Abstractions.IConfigApi;
-using IDagApi = Ipfs.Abstractions.IDagApi;
-using IDnsApi = Ipfs.Abstractions.IDnsApi;
-using IGenericApi = Ipfs.Abstractions.IGenericApi;
-using IKeyApi = Ipfs.Abstractions.IKeyApi;
-using IPinApi = Ipfs.Abstractions.IPinApi;
+using IBitswapApi = TheDotNetLeague.Ipfs.Abstractions.IBitswapApi;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
+using IBootstrapApi = TheDotNetLeague.Ipfs.Abstractions.IBootstrapApi;
+using IConfigApi = TheDotNetLeague.Ipfs.Abstractions.IConfigApi;
+using IDagApi = TheDotNetLeague.Ipfs.Abstractions.IDagApi;
+using IDnsApi = TheDotNetLeague.Ipfs.Abstractions.IDnsApi;
+using IGenericApi = TheDotNetLeague.Ipfs.Abstractions.IGenericApi;
+using IKeyApi = TheDotNetLeague.Ipfs.Abstractions.IKeyApi;
+using IPinApi = TheDotNetLeague.Ipfs.Abstractions.IPinApi;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     The IPFS Core API.

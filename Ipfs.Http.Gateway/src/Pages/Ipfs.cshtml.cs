@@ -4,14 +4,14 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Primitives;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.GateWay.Pages
+namespace TheDotNetLeague.Ipfs.Http.Gateway.Pages
 {
     /// <summary>
     ///     An IPFS file or directory.

@@ -1,14 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.CoreApi;
-using Ipfs.GateWay;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 
-namespace Ipfs.HttpGateway
+namespace TheDotNetLeague.Ipfs.Http.Gateway.Tests
 {
     [TestClass]
     public class GatewayHostTest

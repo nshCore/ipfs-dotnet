@@ -4,7 +4,7 @@ using LibP2P;
 using McMaster.Extensions.CommandLineUtils;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Query the DHT for values or peers")]
     [Subcommand("findpeer", typeof(DhtFindPeerCommand))]

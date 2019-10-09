@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.CoreApi;
-using Ipfs.Core.Lib.Cryptography;
 using ProtoBuf;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
 
-namespace Ipfs.Core.Lib.UnixFileSystem
+namespace TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem
 {
     /// <summary>
     ///     Chunks a data stream into data blocks based upon a size.

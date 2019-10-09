@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Publish/subscribe to messages on a given topic")]
     [Subcommand("ls", typeof(PubsubListCommand))]

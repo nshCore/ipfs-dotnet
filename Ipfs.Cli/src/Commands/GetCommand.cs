@@ -3,11 +3,11 @@ using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using Ipfs.Abstractions;
 using McMaster.Extensions.CommandLineUtils;
 using Nito.AsyncEx;
+using TheDotNetLeague.Ipfs.Abstractions;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Download IPFS data")]
     internal class GetCommand : CommandBase

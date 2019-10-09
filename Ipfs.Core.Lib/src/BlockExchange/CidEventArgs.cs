@@ -1,7 +1,7 @@
 ﻿using System;
 using LibP2P;
 
-namespace Ipfs.Core.Lib.BlockExchange
+namespace TheDotNetLeague.Ipfs.Core.Lib.BlockExchange
 {
     /// <summary>
     ///     The content addressable ID related to an event.

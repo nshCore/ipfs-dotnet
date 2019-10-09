@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using LibP2P;
-using IFileSystemLink = Ipfs.Abstractions.IFileSystemLink;
+using IFileSystemLink = TheDotNetLeague.Ipfs.Abstractions.IFileSystemLink;
 
-namespace Ipfs.Core.Lib.UnixFileSystem
+namespace TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem
 {
     /// <summary>
     ///     A node in the IPFS Unix File System.

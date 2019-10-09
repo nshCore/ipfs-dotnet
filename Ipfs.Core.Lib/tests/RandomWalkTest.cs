@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     [TestClass]
     public class RandomWalkTest

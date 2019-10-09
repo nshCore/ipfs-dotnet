@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace Ipfs.Core.Lib.Cryptography.Proto
+namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography.Proto
 {
     internal enum KeyType
     {

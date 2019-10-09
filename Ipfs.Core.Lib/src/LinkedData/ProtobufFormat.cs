@@ -3,7 +3,7 @@ using System.Linq;
 using LibP2P;
 using PeterO.Cbor;
 
-namespace Ipfs.Core.Lib.LinkedData
+namespace TheDotNetLeague.Ipfs.Core.Lib.LinkedData
 {
     /// <summary>
     ///     Linked data as a protobuf message.

@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using LibP2P.Protocols;
 
-namespace Ipfs.Core.Lib.BlockExchange
+namespace TheDotNetLeague.Ipfs.Core.Lib.BlockExchange
 {
     /// <summary>
     ///     Features of a bitswap protocol.

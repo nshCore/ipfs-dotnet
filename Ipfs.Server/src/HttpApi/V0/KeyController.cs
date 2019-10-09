@@ -2,78 +2,78 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     A cryptographic key.
+    ///   A cryptographic key.
     /// </summary>
     public class CryptoKeyDto
     {
         /// <summary>
-        ///     The key's global unique ID.
-        /// </summary>
-        public string Id;
-
-        /// <summary>
-        ///     The key's local name.
+        ///   The key's local name.
         /// </summary>
         public string Name;
+
+        /// <summary>
+        ///   The key's global unique ID.
+        /// </summary>
+        public string Id;
     }
 
     /// <summary>
-    ///     A list of cryptographic keys.
+    ///   A list of cryptographic keys.
     /// </summary>
     public class CryptoKeysDto
     {
         /// <summary>
-        ///     A list of cryptographic keys.
+        ///   A list of cryptographic keys.
         /// </summary>
         public IEnumerable<CryptoKeyDto> Keys;
     }
 
     /// <summary>
-    ///     A cryptographic key.
+    ///   A cryptographic key.
     /// </summary>
     public class CryptoKeyRenameDto
     {
         /// <summary>
-        ///     The key's global unique ID.
+        ///   The key's local name.
         /// </summary>
-        public string Id;
+        public string Was;
 
         /// <summary>
-        ///     The key's global unique ID.
+        ///   The key's global unique ID.
         /// </summary>
         public string Now;
 
         /// <summary>
-        ///     Indicates that a existing key was overwritten.
+        ///   The key's global unique ID.
         /// </summary>
-        public bool Overwrite;
+        public string Id;
 
         /// <summary>
-        ///     The key's local name.
+        ///   Indicates that a existing key was overwritten.
         /// </summary>
-        public string Was;
+        public bool Overwrite;
     }
 
     /// <summary>
-    ///     Manages the cryptographic keys.
+    ///   Manages the cryptographic keys.
     /// </summary>
     public class KeyController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Creates a new controller.
         /// </summary>
         public KeyController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     List all the keys.
+        ///   List all the keys.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("key/list")]
+        [HttpGet, HttpPost, Route("key/list")]
         public async Task<CryptoKeysDto> List()
         {
             var keys = await IpfsCore.Key.ListAsync(Cancel);
@@ -88,25 +88,26 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Create a new key.
+        ///   Create a new key.
         /// </summary>
         /// <param name="arg">
-        ///     The name of the key.
+        ///   The name of the key.
         /// </param>
         /// <param name="type">
-        ///     "rsa"
+        ///   "rsa"
         /// </param>
         /// <param name="size">
-        ///     The key size in bits, if the type requires it.
+        ///   The key size in bits, if the type requires it.
         /// </param>
-        [HttpGet] [HttpPost] [Route("key/gen")]
-        public async Task<CryptoKeyDto> Create(string arg,
+        [HttpGet, HttpPost, Route("key/gen")]
+        public async Task<CryptoKeyDto> Create(
+            string arg,
             string type,
             int size)
         {
-            if (string.IsNullOrWhiteSpace(arg))
+            if (String.IsNullOrWhiteSpace(arg))
                 throw new ArgumentNullException("arg", "The key name is required.");
-            if (string.IsNullOrWhiteSpace(type))
+            if (String.IsNullOrWhiteSpace(type))
                 throw new ArgumentNullException("type", "The key type is required.");
 
             var key = await IpfsCore.Key.CreateAsync(arg, type, size, Cancel);
@@ -118,39 +119,38 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Remove a key.
+        ///   Remove a key.
         /// </summary>
         /// <param name="arg">
-        ///     The name of the key.
+        ///   The name of the key.
         /// </param>
-        [HttpGet] [HttpPost] [Route("key/rm")]
+        [HttpGet, HttpPost, Route("key/rm")]
         public async Task<CryptoKeysDto> Remove(string arg)
         {
-            if (string.IsNullOrWhiteSpace(arg))
+            if (String.IsNullOrWhiteSpace(arg))
                 throw new ArgumentNullException("arg", "The key name is required.");
 
             var key = await IpfsCore.Key.RemoveAsync(arg, Cancel);
             var dto = new CryptoKeysDto();
             if (key != null)
-                dto.Keys = new[]
+            {
+                dto.Keys = new[] { new CryptoKeyDto
                 {
-                    new CryptoKeyDto
-                    {
-                        Name = key.Name,
-                        Id = key.Id.ToString()
-                    }
-                };
+                    Name = key.Name,
+                    Id = key.Id.ToString()
+                }};
+            }
 
             return dto;
         }
 
         /// <summary>
-        ///     Rename a key.
+        ///   Rename a key.
         /// </summary>
         /// <param name="arg">
-        ///     The old and new key name.
+        ///   The old and new key name.
         /// </param>
-        [HttpGet] [HttpPost] [Route("key/rename")]
+        [HttpGet, HttpPost, Route("key/rename")]
         public async Task<CryptoKeyRenameDto> Rename(string[] arg)
         {
             if (arg.Length != 2)
@@ -162,7 +162,6 @@ namespace Ipfs.Server.HttpApi.V0
                 Was = arg[0],
                 Now = arg[1],
                 Id = key.Id.ToString()
-
                 // TODO: Overwrite
             };
             return dto;

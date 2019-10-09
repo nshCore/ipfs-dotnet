@@ -23,10 +23,11 @@ using System.Collections.Generic;
 using System.Text;
 using Common.Logging;
 using Common.Logging.Simple;
+
 #if !SILVERLIGHT
 #endif
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     /// <summary>
     /// Sends log messages to <see cref="Console.Out" />.

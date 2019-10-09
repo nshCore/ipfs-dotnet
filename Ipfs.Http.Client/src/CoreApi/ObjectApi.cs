@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
-using Ipfs.Abstractions;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.CoreApi;
 using LibP2P;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Abstractions;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class ObjectApi : IObjectApi

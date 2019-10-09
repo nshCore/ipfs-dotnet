@@ -1,58 +1,58 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     A list of pins.
+    ///   A list of pins.
     /// </summary>
     public class PinsDto
     {
         /// <summary>
-        ///     The CIDs.
+        ///   The CIDs.
         /// </summary>
         public IEnumerable<string> Pins;
     }
 
     /// <summary>
-    ///     Detailed information on a pin.
+    ///   Detailed information on a pin.
     /// </summary>
     public class PinDetailDto
     {
         /// <summary>
-        ///     "recursive", "indirect", ...
+        ///   "recursive", "indirect", ...
         /// </summary>
         public string Type = "unknown";
     }
 
     /// <summary>
-    ///     A map of pins.
+    ///   A map of pins.
     /// </summary>
     public class PinDetailsDto
     {
         /// <summary>
-        ///     The pins.
+        ///   The pins.
         /// </summary>
         public Dictionary<string, PinDetailDto> Keys;
     }
 
     /// <summary>
-    ///     Manage pinned objects (locally stored and permanent).
+    ///    Manage pinned objects (locally stored and permanent).
     /// </summary>
     public class PinController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Creates a new controller.
         /// </summary>
         public PinController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     List the pins.
+        ///   List the pins.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("pin/ls")]
+        [HttpGet, HttpPost, Route("pin/ls")]
         public async Task<PinDetailsDto> List()
         {
             var cids = await IpfsCore.Pin.ListAsync(Cancel);
@@ -63,16 +63,17 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Pin the content.
+        ///   Pin the content.
         /// </summary>
         /// <param name="arg">
-        ///     The CID of the content.
+        ///   The CID of the content.
         /// </param>
         /// <param name="recursive">
-        ///     Recursively pin links of the content.
+        ///   Recursively pin links of the content.
         /// </param>
-        [HttpGet] [HttpPost] [Route("pin/add")]
-        public async Task<PinsDto> Add(string arg,
+        [HttpGet, HttpPost, Route("pin/add")]
+        public async Task<PinsDto> Add(
+            string arg,
             bool recursive = true)
         {
             var cids = await IpfsCore.Pin.AddAsync(arg, recursive, Cancel);
@@ -82,17 +83,19 @@ namespace Ipfs.Server.HttpApi.V0
             };
         }
 
+
         /// <summary>
-        ///     Remove a pin.
+        ///   Remove a pin.
         /// </summary>
         /// <param name="arg">
-        ///     The CID of the content.
+        ///   The CID of the content.
         /// </param>
         /// <param name="recursive">
-        ///     Recursively unpin links of the content.
+        ///   Recursively unpin links of the content.
         /// </param>
-        [HttpGet] [HttpPost] [Route("pin/rm")]
-        public async Task<PinsDto> Remove(string arg,
+        [HttpGet, HttpPost, Route("pin/rm")]
+        public async Task<PinsDto> Remove(
+            string arg,
             bool recursive = true)
         {
             var cids = await IpfsCore.Pin.RemoveAsync(arg, recursive, Cancel);

@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.CoreApi;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class BlockRepositoryApi : IBlockRepositoryApi

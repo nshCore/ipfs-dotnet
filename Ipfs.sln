@@ -22,6 +22,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ipfs.Abstractions", "Ipfs.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ipfs.Http.Client.Tests", "Ipfs.Http.Client\test\Ipfs.Http.Client.Tests.csproj", "{FE0F563A-F169-40FD-9098-595D0B0C660A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Props", "Props", "{87C246D7-2AF2-402E-AFB5-846CD4241ECC}"
+ProjectSection(SolutionItems) = preProject
+	Common.Packable.props = Common.Packable.props
+	Common.Projects.props = Common.Projects.props
+	Common.TestProjects.props = Common.TestProjects.props
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

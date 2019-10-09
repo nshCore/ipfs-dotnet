@@ -1,8 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using System.IO;
-using Ipfs.Core.Lib;
+﻿using System.IO;
+using Newtonsoft.Json.Linq;
 
-namespace Ipfs.Engine
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests
 {
     /// <summary>
     ///   Creates a temporary node.

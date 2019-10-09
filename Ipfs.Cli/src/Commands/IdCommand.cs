@@ -3,7 +3,7 @@ using McMaster.Extensions.CommandLineUtils;
 using Newtonsoft.Json;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Show info on an IPFS peer")]
     internal class IdCommand : CommandBase

@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ipfs.Core.Lib.Migration
+namespace TheDotNetLeague.Ipfs.Core.Lib.Migration
 {
     /// <summary>
     ///     Provides a migration path to the repository.

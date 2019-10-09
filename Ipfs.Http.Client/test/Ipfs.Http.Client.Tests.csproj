@@ -1,17 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
-    <IsPackable>false</IsPackable>
-    <DebugType>full</DebugType>
-    <RootNamespace>Ipfs.Http.Client.Tests</RootNamespace>
-  </PropertyGroup>
+  <Import Project="../../Common.TestProjects.props" />
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>TheDotNetLeague.Ipfs.Http.Client.Tests</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyName>TheDotNetLeague.Ipfs.Http.Client.Tests</AssemblyName>
+    <AssemblyOriginatorKeyFile>TheDotNetLeague.Ipfs.Http.Client.Tests.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\src\Ipfs.Http.Client.csproj" />

@@ -1,8 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="../../Common.Projects.props" />
+
   <PropertyGroup>
-    <TargetFrameworks>netstandard2</TargetFrameworks>
-    <RootNamespace>Documentation</RootNamespace>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>TheDotNetLeague.Ipfs.Http.Gateway.Docs</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyName>TheDotNetLeague.Ipfs.Http.Gateway.Docs</AssemblyName>
+    <AssemblyOriginatorKeyFile>TheDotNetLeague.Ipfs.Http.Gateway.Docs.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
   </PropertyGroup>
+
 
 </Project>

@@ -8,10 +8,6 @@ using System.Security;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
-using Ipfs.Core.Lib.BlockExchange;
-using Ipfs.Core.Lib.CoreApi;
-using Ipfs.Core.Lib.Cryptography;
-using Ipfs.Core.Lib.Migration;
 using LibP2P;
 using LibP2P.Cryptography;
 using LibP2P.Discovery;
@@ -21,18 +17,22 @@ using LibP2P.Routing;
 using LibP2P.SecureCommunication;
 using Makaretu.Dns;
 using Nito.AsyncEx;
+using TheDotNetLeague.Ipfs.Core.Lib.BlockExchange;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
+using TheDotNetLeague.Ipfs.Core.Lib.Migration;
 using TheDotNetLeague.MultiFormats.MultiBase;
-using IBitswapApi = Ipfs.Abstractions.IBitswapApi;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
-using IBootstrapApi = Ipfs.Abstractions.IBootstrapApi;
-using IConfigApi = Ipfs.Abstractions.IConfigApi;
-using IDagApi = Ipfs.Abstractions.IDagApi;
-using IDnsApi = Ipfs.Abstractions.IDnsApi;
-using IGenericApi = Ipfs.Abstractions.IGenericApi;
-using IKeyApi = Ipfs.Abstractions.IKeyApi;
-using IPinApi = Ipfs.Abstractions.IPinApi;
+using IBitswapApi = TheDotNetLeague.Ipfs.Abstractions.IBitswapApi;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
+using IBootstrapApi = TheDotNetLeague.Ipfs.Abstractions.IBootstrapApi;
+using IConfigApi = TheDotNetLeague.Ipfs.Abstractions.IConfigApi;
+using IDagApi = TheDotNetLeague.Ipfs.Abstractions.IDagApi;
+using IDnsApi = TheDotNetLeague.Ipfs.Abstractions.IDnsApi;
+using IGenericApi = TheDotNetLeague.Ipfs.Abstractions.IGenericApi;
+using IKeyApi = TheDotNetLeague.Ipfs.Abstractions.IKeyApi;
+using IPinApi = TheDotNetLeague.Ipfs.Abstractions.IPinApi;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Implements the <see cref="ICoreApi">Core API</see> which makes it possible to create a decentralised

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Ipfs.Core.Lib.UnixFileSystem;
+using TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem;
 
-namespace Ipfs.Engine.UnixFileSystem
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.UnixFileSystem
 {
     [TestClass]
     public class FileSystemNodeTest

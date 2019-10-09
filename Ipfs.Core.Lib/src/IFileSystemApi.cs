@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.CoreApi;
 using LibP2P;
-using IFileSystemNode = Ipfs.Abstractions.IFileSystemNode;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
+using IFileSystemNode = TheDotNetLeague.Ipfs.Abstractions.IFileSystemNode;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Manages the files/directories in IPFS.

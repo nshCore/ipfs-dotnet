@@ -5,13 +5,13 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Common.Logging;
 using Common.Logging.Configuration;
-using Ipfs.Cli.Commands;
-using Ipfs.Core.Lib;
-using Ipfs.Http.Client;
 using McMaster.Extensions.CommandLineUtils;
 using Newtonsoft.Json;
+using TheDotNetLeague.Ipfs.Cli.Commands;
+using TheDotNetLeague.Ipfs.Core.Lib;
+using TheDotNetLeague.Ipfs.Http.Client;
 
-namespace Ipfs.Cli
+namespace TheDotNetLeague.Ipfs.Cli
 {
     [Command("csipfs")]
     [VersionOptionFromMember("--version", MemberName = nameof(GetVersion))]

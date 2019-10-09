@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.Cryptography;
 using LibP2P;
 using ProtoBuf;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
 
-namespace Ipfs.Core.Lib.UnixFileSystem
+namespace TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem
 {
     /// <summary>
     ///     Provides read-only access to a chunked file.

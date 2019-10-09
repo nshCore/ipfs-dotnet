@@ -24,7 +24,7 @@ using System.Text;
 using Common.Logging;
 using Common.Logging.Simple;
 
-namespace Ipfs.Cli
+namespace TheDotNetLeague.Ipfs.Cli
 {
     /// <summary>
     ///     Sends log messages to <see cref="Console.Out" />.

@@ -13,7 +13,7 @@ using Org.BouncyCastle.Math;
 using Org.BouncyCastle.X509;
 using TheDotNetLeague.MultiFormats.MultiBase;
 
-namespace Ipfs.Core.Lib.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     public partial class KeyChain
     {

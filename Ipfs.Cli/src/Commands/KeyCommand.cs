@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace Ipfs.Cli.Commands
+namespace TheDotNetLeague.Ipfs.Cli.Commands
 {
     [Command(Description = "Manage private keys")]
     [Subcommand("list", typeof(KeyListCommand))]

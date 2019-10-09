@@ -1,47 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
-    <AssemblyName>Ipfs.Core.Lib</AssemblyName>
-    <RootNamespace>Ipfs.Core.Lib</RootNamespace>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    
-    <!-- Needed for snupkg -->
-    <DebugType>portable</DebugType>
-
-    <!-- developer build is always 0.42 -->
-    <AssemblyVersion>0.42</AssemblyVersion>
-    <Version>0.42</Version>
-
-    <!-- Nuget specs -->
-    <PackageId>Ipfs.Engine</PackageId>
-    <Authors>Richard Schneider</Authors>
-    <Title>IPFS Engine</Title>
-    <Description>An embedded IPFS engine for .Net</Description>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>https://github.com/richardschneider/net-ipfs-engine/releases</PackageReleaseNotes>
-    <Copyright>© 2018-2019 Richard Schneider</Copyright>
-    <PackageTags>ipfs peer-to-peer p2p distributed file-system web</PackageTags>
-    <IncludeSymbols>True</IncludeSymbols>
-    <PackageProjectUrl>https://github.com/richardschneider/net-ipfs-engine</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/richardschneider/net-ipfs-core/master/doc/images/ipfs-cs-logo-64x64.png</PackageIconUrl>
-
-    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
+  <Import Project="../../Common.Packable.props" />
+  <Import Project="../../Common.Projects.props" />
 
   <PropertyGroup>
-    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
-    <EmbedUntrackedSources>false</EmbedUntrackedSources>
-    <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb;$(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>TheDotNetLeague.Ipfs.Core.Lib</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyName>TheDotNetLeague.Ipfs.Core.Lib</AssemblyName>
+    <AssemblyOriginatorKeyFile>TheDotNetLeague.Ipfs.Core.Lib.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Version)' == '' ">
+    <VersionPrefix Condition=" '$(VersionPrefix)' == '' ">0.0.1</VersionPrefix>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix).$(VersionSuffix)</Version>
+    <Version Condition=" '$(Version)' == '' ">$(VersionSuffix)</Version>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Makaretu.Dns.Unicast" Version="0.11.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
@@ -64,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Ipfs.Abstractions\Ipfs.Abstractions.csproj" />
+    <PackageReference Include="TheDotNetLeague.Ipfs.Abstractions" Version="0.0.1" />
   </ItemGroup>
 
 </Project>

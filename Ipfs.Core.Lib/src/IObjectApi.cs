@@ -2,11 +2,11 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.CoreApi;
 using LibP2P;
-using IMerkleLink = Ipfs.Abstractions.IMerkleLink;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
+using IMerkleLink = TheDotNetLeague.Ipfs.Abstractions.IMerkleLink;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Manages the IPFS Directed Acrylic Graph.

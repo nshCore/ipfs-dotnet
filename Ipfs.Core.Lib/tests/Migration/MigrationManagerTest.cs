@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.Migration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib.Migration;
 
-namespace Ipfs.Engine.Migration
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.Migration
 {
     [TestClass]
     public class MigrationManagerTest

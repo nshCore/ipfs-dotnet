@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using IKey = Ipfs.Abstractions.IKey;
+using IKey = TheDotNetLeague.Ipfs.Abstractions.IKey;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class KeyApi : Abstractions.IKeyApi
     {

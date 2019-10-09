@@ -3,14 +3,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
-using Ipfs.Core.Lib.BlockExchange;
 using LibP2P;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib.BlockExchange;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Engine.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.CoreApi
 {
 
     [TestClass]

@@ -6,9 +6,9 @@ using System.Runtime.Serialization;
 using Google.Protobuf;
 using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiHash;
-using IMerkleLink = Ipfs.Abstractions.IMerkleLink;
+using IMerkleLink = TheDotNetLeague.Ipfs.Abstractions.IMerkleLink;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     A node in the IPFS Merkle DAG.

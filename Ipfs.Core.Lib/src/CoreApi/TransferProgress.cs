@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     /// <summary>
     ///     Reports the <see cref="IProgress{T}">progress</see> of

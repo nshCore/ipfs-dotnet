@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Abstractions;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
     class KeyApi  : IKeyApi
     {

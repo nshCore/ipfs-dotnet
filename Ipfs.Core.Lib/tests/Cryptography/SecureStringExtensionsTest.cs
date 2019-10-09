@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Security;
-using Ipfs.Core.Lib.Cryptography;
+﻿using System.Security;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
 
-namespace Ipfs.Engine.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.Cryptography
 {
     [TestClass]
     public class SecureStringExtensionsTest
@@ -15,7 +15,7 @@ namespace Ipfs.Engine.Cryptography
             foreach (var c in expected) secret.AppendChar(c);
             secret.UseSecretBytes(bytes =>
             {
-                Assert.AreEqual(expected.Length, bytes.Length);
+                Assert.AreEqual<int>(expected.Length, bytes.Length);
                 for (var i = 0; i < expected.Length; ++i)
                     Assert.AreEqual((int)expected[i], (int)bytes[i]);
             });

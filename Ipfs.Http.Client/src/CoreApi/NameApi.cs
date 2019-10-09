@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using LibP2P;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Http.Client.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.CoreApi
 {
 
     class NameApi : INameApi

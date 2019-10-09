@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Abstractions
+﻿namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     A Directed Acyclic Graph (DAG) for IPFS file system node.

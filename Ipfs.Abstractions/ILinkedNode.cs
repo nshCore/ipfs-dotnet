@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Abstractions
+﻿namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     InterPlanetary Linked Data.

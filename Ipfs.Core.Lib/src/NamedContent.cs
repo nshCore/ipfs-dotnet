@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Core.Lib
+﻿namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Content that has an associated name.

@@ -1,6 +1,6 @@
 ﻿using LibP2P;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     A link to another node in IPFS.

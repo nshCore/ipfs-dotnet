@@ -3,9 +3,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using LibP2P;
 using TheDotNetLeague.MultiFormats.MultiHash;
-using IBitswapLedger = Ipfs.Abstractions.IBitswapLedger;
+using IBitswapLedger = TheDotNetLeague.Ipfs.Abstractions.IBitswapLedger;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class BitswapApi : Abstractions.IBitswapApi
     {

@@ -7,16 +7,16 @@ using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
 using ICSharpCode.SharpZipLib.Tar;
-using Ipfs.Core.Lib.UnixFileSystem;
 using LibP2P;
 using ProtoBuf;
+using TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
-using IFileSystemLink = Ipfs.Abstractions.IFileSystemLink;
-using IFileSystemNode = Ipfs.Abstractions.IFileSystemNode;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
+using IFileSystemLink = TheDotNetLeague.Ipfs.Abstractions.IFileSystemLink;
+using IFileSystemNode = TheDotNetLeague.Ipfs.Abstractions.IFileSystemNode;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class FileSystemApi : IFileSystemApi
     {

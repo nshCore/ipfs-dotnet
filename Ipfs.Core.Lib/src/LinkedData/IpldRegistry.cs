@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Ipfs.Core.Lib.LinkedData
+namespace TheDotNetLeague.Ipfs.Core.Lib.LinkedData
 {
     /// <summary>
     ///     Metadata on <see cref="ILinkedDataFormat" />.

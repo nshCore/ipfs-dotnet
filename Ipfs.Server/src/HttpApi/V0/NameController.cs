@@ -1,48 +1,49 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using LibP2P;
 using Microsoft.AspNetCore.Mvc;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server.HttpApi.V0
+namespace TheDotNetLeague.Ipfs.Server.HttpApi.V0
 {
     /// <summary>
-    ///     Content that has an associated name.
+    ///   Content that has an associated name.
     /// </summary>
     public class NamedContentDto
     {
         /// <summary>
-        ///     Path to the name, "/ipns/...".
+        ///   Path to the name, "/ipns/...".
         /// </summary>
         public string Name;
 
         /// <summary>
-        ///     Path to the content, "/ipfs/...".
+        ///   Path to the content, "/ipfs/...".
         /// </summary>
         public string Value;
     }
 
     /// <summary>
-    ///     Manages the IPNS (Interplanetary Name Space).
+    ///   Manages the IPNS (Interplanetary Name Space).
     /// </summary>
     /// <remarks>
-    ///     IPNS is a PKI namespace, where names are the hashes of public keys, and
-    ///     the private key enables publishing new(signed) values. The default name
-    ///     is the node's own <see cref="Peer.Id" />,
-    ///     which is the hash of its public key.
+    ///   IPNS is a PKI namespace, where names are the hashes of public keys, and
+    ///   the private key enables publishing new(signed) values. The default name
+    ///   is the node's own <see cref="Peer.Id"/>,
+    ///   which is the hash of its public key.
     /// </remarks>
     public class NameController : IpfsController
     {
         /// <summary>
-        ///     Creates a new controller.
+        ///   Creates a new controller.
         /// </summary>
         public NameController(ICoreApi ipfs) : base(ipfs) { }
 
         /// <summary>
-        ///     Resolve a name.
+        ///   Resolve a name.
         /// </summary>
-        [HttpGet] [HttpPost] [Route("name/resolve")]
-        public async Task<PathDto> Resolve(string arg,
+        [HttpGet, HttpPost, Route("name/resolve")]
+        public async Task<PathDto> Resolve(
+            string arg,
             bool recursive = false,
             bool nocache = false)
         {
@@ -51,31 +52,32 @@ namespace Ipfs.Server.HttpApi.V0
         }
 
         /// <summary>
-        ///     Publish content.
+        ///   Publish content.
         /// </summary>
         /// <param name="arg">
-        ///     The CID or path to the content to publish.
+        ///   The CID or path to the content to publish.
         /// </param>
         /// <param name="resolve">
-        ///     Resolve before publishing.
+        ///   Resolve before publishing.
         /// </param>
         /// <param name="key">
-        ///     The local key name used to sign the content.
+        ///   The local key name used to sign the content.
         /// </param>
         /// <param name="lifetime">
-        ///     Duration that the record will be valid for.
+        ///   Duration that the record will be valid for.
         /// </param>
-        [HttpGet] [HttpPost] [Route("name/publish")]
-        public async Task<NamedContentDto> Publish(string arg,
+        [HttpGet, HttpPost, Route("name/publish")]
+        public async Task<NamedContentDto> Publish(
+            string arg,
             bool resolve = true,
             string key = "self",
             string lifetime = "24h")
         {
-            if (string.IsNullOrWhiteSpace(arg))
+            if (String.IsNullOrWhiteSpace(arg))
                 throw new ArgumentNullException("arg", "The name is required.");
-            if (string.IsNullOrWhiteSpace(key))
+            if (String.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException("type", "The key name is required.");
-            if (string.IsNullOrWhiteSpace(lifetime))
+            if (String.IsNullOrWhiteSpace(lifetime))
                 throw new ArgumentNullException("type", "The lifetime is required.");
 
             var duration = Duration.Parse(lifetime);
@@ -86,5 +88,7 @@ namespace Ipfs.Server.HttpApi.V0
                 Value = content.ContentPath
             };
         }
+
     }
 }
+

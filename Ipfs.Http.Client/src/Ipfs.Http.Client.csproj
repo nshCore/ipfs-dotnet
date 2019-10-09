@@ -1,31 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="../../Common.Packable.props" />
+  <Import Project="../../Common.Projects.props" />
+
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <AssemblyName>Ipfs.Http.Client</AssemblyName>
-    <RootNamespace>Ipfs.Http.Client</RootNamespace>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    <DebugType>full</DebugType>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-
-    <!-- developer build is always 0.42 -->
-    <AssemblyVersion>0.42</AssemblyVersion>
-    <Version>0.42</Version>
-
-    <!-- Nuget specs -->
-    <PackageId>Ipfs.Http.Client</PackageId>
-    <Authors>Richard Schneider</Authors>
-    <Title>IPFS HTTP Client</Title>
-    <Description> Provides .Net client access to the InterPlanetary File System.</Description>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>https://github.com/richardschneider/net-ipfs-http-client/releases</PackageReleaseNotes>
-    <Copyright>© 2015-2019 Richard Schneider</Copyright>
-    <PackageTags>ipfs peer-to-peer distributed file-system</PackageTags>
-    <IncludeSymbols>True</IncludeSymbols>
-    <PackageProjectUrl>https://github.com/richardschneider/net-ipfs-http-client</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/richardschneider/net-ipfs-core/master/doc/images/ipfs-cs-logo-64x64.png</PackageIconUrl>
+    <RootNamespace>TheDotNetLeague.Ipfs.Http.Client</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyName>TheDotNetLeague.Ipfs.Http.Client</AssemblyName>
+    <AssemblyOriginatorKeyFile>TheDotNetLeague.Ipfs.Http.Client.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Version)' == '' ">
+    <VersionPrefix Condition=" '$(VersionPrefix)' == '' ">0.0.1</VersionPrefix>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix).$(VersionSuffix)</Version>
+    <Version Condition=" '$(Version)' == '' ">$(VersionSuffix)</Version>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="System.Net.Http" Version="4.3.3" Condition="'$(TargetFramework)' == 'netstandard14'" />

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace Ipfs.Cli
+namespace TheDotNetLeague.Ipfs.Cli
 {
     [HelpOption("--help")]
     internal abstract class CommandBase

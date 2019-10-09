@@ -2,10 +2,10 @@
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Http.Client.Tests.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests.CoreApi
 {
 
     [TestClass]

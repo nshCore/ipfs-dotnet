@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using LibP2P;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     A Directed Acyclic Graph (DAG) in IPFS.

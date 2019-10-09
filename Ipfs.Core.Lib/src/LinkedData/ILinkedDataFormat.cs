@@ -1,6 +1,6 @@
 ﻿using PeterO.Cbor;
 
-namespace Ipfs.Core.Lib.LinkedData
+namespace TheDotNetLeague.Ipfs.Core.Lib.LinkedData
 {
     /// <summary>
     ///     A specific format for linked data.

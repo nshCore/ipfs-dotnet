@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Core.Lib.CoreApi
+﻿namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     /// <summary>
     ///     The statistics for <see cref="IStatsApi.RepositoryAsync" />.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Configuration options for the repository.

@@ -1,6 +1,6 @@
 ﻿using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Information about a cryptographic key.

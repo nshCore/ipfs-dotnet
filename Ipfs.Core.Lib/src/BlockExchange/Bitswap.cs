@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
-using Ipfs.Core.Lib.CoreApi;
 using LibP2P;
+using TheDotNetLeague.Ipfs.Core.Lib.CoreApi;
 using TheDotNetLeague.MultiFormats.MultiHash;
-using IBlockApi = Ipfs.Abstractions.IBlockApi;
+using IBlockApi = TheDotNetLeague.Ipfs.Abstractions.IBlockApi;
 
-namespace Ipfs.Core.Lib.BlockExchange
+namespace TheDotNetLeague.Ipfs.Core.Lib.BlockExchange
 {
     /// <summary>
     ///     Exchange blocks with other peers.

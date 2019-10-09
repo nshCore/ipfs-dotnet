@@ -6,7 +6,7 @@ using LibP2P.Protocols;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Some miscellaneous methods.

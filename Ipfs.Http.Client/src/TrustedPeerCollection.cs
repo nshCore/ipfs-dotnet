@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Http.Client
+namespace TheDotNetLeague.Ipfs.Http.Client
 {
     /// <summary>
     ///   A list of trusted peers.

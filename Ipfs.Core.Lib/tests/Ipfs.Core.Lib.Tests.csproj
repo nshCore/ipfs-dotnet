@@ -1,28 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
-
-    <IsPackable>false</IsPackable>
-    <DebugType>portable</DebugType>
-    <RootNamespace>Ipfs.Engine</RootNamespace>
-  </PropertyGroup>
+  <Import Project="../../Common.TestProjects.props" />
 
   <PropertyGroup>
-    <!-- https://github.com/tonerdo/coverlet -->
-    <!-- Do not collect by default -->
-    <CollectCoverage>false</CollectCoverage>
-    <CoverletOutputFormat>opencover</CoverletOutputFormat>
-    <!--<Exclude>[xunit.*]*</Exclude>-->
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>TheDotNetLeague.Ipfs.Core.Lib.Tests</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyName>TheDotNetLeague.Ipfs.Core.Lib.Tests</AssemblyName>
+    <AssemblyOriginatorKeyFile>TheDotNetLeague.Ipfs.Core.Lib.Tests.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" PrivateAssets="all" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" PrivateAssets="all" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" PrivateAssets="all" />
-    <PackageReference Include="coverlet.msbuild" Version="2.6.3" PrivateAssets="all" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="SharpZipLib" Version="1.2.0" />

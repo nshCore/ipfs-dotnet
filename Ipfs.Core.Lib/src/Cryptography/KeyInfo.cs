@@ -1,6 +1,6 @@
 ﻿using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     internal class KeyInfo : Abstractions.IKey
     {

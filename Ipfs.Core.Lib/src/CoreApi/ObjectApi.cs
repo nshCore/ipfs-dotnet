@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib.UnixFileSystem;
 using LibP2P;
 using ProtoBuf;
-using IMerkleLink = Ipfs.Abstractions.IMerkleLink;
+using TheDotNetLeague.Ipfs.Core.Lib.UnixFileSystem;
+using IMerkleLink = TheDotNetLeague.Ipfs.Abstractions.IMerkleLink;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class ObjectApi : IObjectApi
     {

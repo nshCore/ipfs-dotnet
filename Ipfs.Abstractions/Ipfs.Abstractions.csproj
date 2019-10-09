@@ -1,7 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <Import Project="../Common.Packable.props" />
+    <Import Project="../Common.Projects.props" />
+
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>TheDotNetLeague.Ipfs.Abstractions</RootNamespace>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyName>TheDotNetLeague.Ipfs.Abstractions</AssemblyName>
+        <AssemblyOriginatorKeyFile>TheDotNetLeague.Ipfs.Abstractions.snk</AssemblyOriginatorKeyFile>
+        <PublicSign>true</PublicSign>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Version)' == '' ">
+        <VersionPrefix Condition=" '$(VersionPrefix)' == '' ">0.0.1</VersionPrefix>
+        <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix).$(VersionSuffix)</Version>
+        <Version Condition=" '$(Version)' == '' ">$(VersionSuffix)</Version>
     </PropertyGroup>
     
     <ItemGroup>

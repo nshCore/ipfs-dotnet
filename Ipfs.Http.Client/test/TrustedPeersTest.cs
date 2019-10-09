@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 
-namespace Ipfs.Http.Client.Tests
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests
 {
     
     public partial class IpfsClientTest

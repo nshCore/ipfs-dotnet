@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using LibP2P;
 using Makaretu.Dns;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class DnsApi : Abstractions.IDnsApi
     {

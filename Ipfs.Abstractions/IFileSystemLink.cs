@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Abstractions
+﻿namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     A link to another file system node in IPFS.

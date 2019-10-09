@@ -4,14 +4,14 @@ using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Abstractions;
 using LibP2P;
 using LibP2P.Protocols;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Abstractions;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Http.Client
+namespace TheDotNetLeague.Ipfs.Http.Client
 {
     public partial class IpfsClient : IGenericApi
     {

@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using Ipfs.Http.Client.CoreApi;
 using LibP2P;
 using Newtonsoft.Json.Linq;
+using TheDotNetLeague.Ipfs.Http.Client.CoreApi;
 using TheDotNetLeague.MultiFormats.MultiBase;
 
-namespace Ipfs.Http.Client
+namespace TheDotNetLeague.Ipfs.Http.Client
 {
     /// <summary>
     ///   A published message.

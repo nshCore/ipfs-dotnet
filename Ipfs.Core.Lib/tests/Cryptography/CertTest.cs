@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.X509.Extension;
-using System.Threading.Tasks;
 using TheDotNetLeague.MultiFormats.MultiBase;
 
-namespace Ipfs.Engine.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.Cryptography
 {
     [TestClass]
     public class CertTest

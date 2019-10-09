@@ -9,7 +9,7 @@ using LibP2P.Protocols;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib.CoreApi
+namespace TheDotNetLeague.Ipfs.Core.Lib.CoreApi
 {
     internal class GenericApi : Abstractions.IGenericApi
     {

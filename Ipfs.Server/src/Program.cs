@@ -1,28 +1,27 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Ipfs.Core.Lib;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
+using TheDotNetLeague.Ipfs.Core.Lib;
 
-namespace Ipfs.Server
+namespace TheDotNetLeague.Ipfs.Server
 {
     /// <summary>
-    ///     Manages an IPFS server.
+    ///   Manages an IPFS server.
     /// </summary>
     public class Program
     {
-        private const string passphrase = "this is not a secure pass phrase";
-        private static readonly CancellationTokenSource cancel = new CancellationTokenSource();
-
+        static CancellationTokenSource cancel = new CancellationTokenSource();
         /// <summary>
-        ///     The IPFS Core API engine.
+        ///   The IPFS Core API engine.
         /// </summary>
         public static IpfsEngine IpfsEngine;
+        const string passphrase = "this is not a secure pass phrase";
 
         /// <summary>
-        ///     Main entry point.
+        ///   Main entry point.
         /// </summary>
         public static void Main(string[] args)
         {
@@ -32,8 +31,8 @@ namespace Ipfs.Server
                 IpfsEngine.StartAsync().Wait();
 
                 BuildWebHost(args)
-                   .RunAsync(cancel.Token)
-                   .Wait();
+                    .RunAsync(cancel.Token)
+                    .Wait();
             }
             catch (TaskCanceledException)
             {
@@ -44,31 +43,41 @@ namespace Ipfs.Server
                 Console.WriteLine(e.Message); // TODO: better error handling
             }
 
-            if (IpfsEngine != null) IpfsEngine.StopAsync().Wait();
+            if (IpfsEngine != null)
+            {
+                IpfsEngine.StopAsync().Wait();
+            }
         }
 
-        private static IWebHost BuildWebHost(string[] args)
+        static IWebHost BuildWebHost(string[] args)
         {
             var urls = "http://127.0.0.1:5009";
-            var addr = (string) IpfsEngine.Config.GetAsync("Addresses.API").Result;
+            var addr = (string)IpfsEngine.Config.GetAsync("Addresses.API").Result;
             if (addr != null)
-
+            {
                 // Quick and dirty: multiaddress to URL
                 urls = addr
-                   .Replace("/ip4/", "http://")
-                   .Replace("/ip6/", "http://")
-                   .Replace("/tcp/", ":");
+                    .Replace("/ip4/", "http://")
+                    .Replace("/ip6/", "http://")
+                    .Replace("/tcp/", ":");
+            }
 
             return WebHost.CreateDefaultBuilder(args)
-               .UseStartup<Startup>()
-               .ConfigureLogging(logging => { logging.ClearProviders(); })
-               .UseUrls(urls)
-               .Build();
+                .UseStartup<Startup>()
+                .ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+                })
+                .UseUrls(urls)
+                .Build();
         }
 
         /// <summary>
-        ///     Stop the program.
+        ///   Stop the program.
         /// </summary>
-        public static void Shutdown() { cancel.Cancel(); }
+        public static void Shutdown()
+        {
+            cancel.Cancel();
+        }
     }
 }

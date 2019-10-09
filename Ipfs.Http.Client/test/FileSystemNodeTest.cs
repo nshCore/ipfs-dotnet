@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 
-namespace Ipfs.Http.Client.Tests
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests
 {
     
     [TestClass]

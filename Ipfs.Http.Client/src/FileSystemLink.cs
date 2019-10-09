@@ -1,7 +1,7 @@
-﻿using Ipfs.Abstractions;
-using LibP2P;
+﻿using LibP2P;
+using TheDotNetLeague.Ipfs.Abstractions;
 
-namespace Ipfs.Http.Client
+namespace TheDotNetLeague.Ipfs.Http.Client
 {
     /// <summary>
     ///     A link to another file system node in IPFS.

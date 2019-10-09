@@ -10,7 +10,7 @@ using Org.BouncyCastle.Crypto.Parameters;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Core.Lib.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Cryptography
 {
     public partial class KeyChain
     {

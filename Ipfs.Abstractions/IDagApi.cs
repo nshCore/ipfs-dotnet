@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 using TheDotNetLeague.MultiFormats.MultiBase;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Abstractions
+namespace TheDotNetLeague.Ipfs.Abstractions
 {
     /// <summary>
     ///     Manages the IPLD (linked data) Directed Acrylic Graph.

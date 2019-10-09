@@ -1,4 +1,4 @@
-﻿namespace Ipfs.Http.Client.Tests
+﻿namespace TheDotNetLeague.Ipfs.Http.Client.Tests
 {
     public static class TestFixture
     {

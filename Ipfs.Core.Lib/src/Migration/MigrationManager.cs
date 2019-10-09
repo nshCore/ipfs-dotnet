@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
 
-namespace Ipfs.Core.Lib.Migration
+namespace TheDotNetLeague.Ipfs.Core.Lib.Migration
 {
     /// <summary>
     ///     Allows migration of the repository.

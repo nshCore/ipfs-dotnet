@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Org.BouncyCastle.Crypto.Parameters;
-using System.Threading.Tasks;
 using TheDotNetLeague.MultiFormats.MultiBase;
 
-namespace Ipfs.Engine.Cryptography
+namespace TheDotNetLeague.Ipfs.Core.Lib.Tests.Cryptography
 {
     [TestClass]
     public class Rfc8410Test

@@ -23,7 +23,7 @@ using Common.Logging;
 using Common.Logging.Configuration;
 using Common.Logging.Simple;
 
-namespace Ipfs.Cli
+namespace TheDotNetLeague.Ipfs.Cli
 {
     /// <summary>
     ///     Factory for creating <see cref="ILog" /> instances that write data to <see cref="Console.Out" />.

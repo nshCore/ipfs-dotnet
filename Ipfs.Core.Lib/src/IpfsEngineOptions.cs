@@ -1,7 +1,7 @@
-﻿using Ipfs.Core.Lib.Cryptography;
-using Makaretu.Dns;
+﻿using Makaretu.Dns;
+using TheDotNetLeague.Ipfs.Core.Lib.Cryptography;
 
-namespace Ipfs.Core.Lib
+namespace TheDotNetLeague.Ipfs.Core.Lib
 {
     /// <summary>
     ///     Configuration options for the <see cref="IpfsEngine" />.

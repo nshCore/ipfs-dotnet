@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheDotNetLeague.MultiFormats.MultiAddress;
 using TheDotNetLeague.MultiFormats.MultiHash;
 
-namespace Ipfs.Http.Client.Tests.CoreApi
+namespace TheDotNetLeague.Ipfs.Http.Client.Tests.CoreApi
 {
     [TestClass]
     public class GenericApiTest
